@@ -1,0 +1,7 @@
+.main {
+  align-items: center;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "player scoreboard computer";
+  grid-template-columns: 1fr 1fr 1fr;
+}
