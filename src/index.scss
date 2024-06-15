@@ -1,4 +1,15 @@
+* {
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
 body {
   margin: 0;
   padding: 0;
+  background: rgb(162, 67, 200);
+  background: linear-gradient(
+    190deg,
+    rgba(162, 67, 200, 0.2231267507002801) 10%,
+    rgba(177, 99, 231, 0.520045518207283) 50%
+  );
 }

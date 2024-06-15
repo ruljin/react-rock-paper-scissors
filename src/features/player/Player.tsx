@@ -1,39 +1,26 @@
-import { type Movement, PAPER, ROCK, SCISSORS } from "../../models/Movement";
-import { Button } from "../../components/Button/Button";
-import { Footer } from "../../components/Footer/Footer";
+import { Actions } from "./components/Actions/Actions";
 import { Header } from "../../components/Header/Header";
+import { Image } from "../../components/Image/Image";
 import styles from "./Player.module.scss";
-import { useGameContext } from "../../hooks/useGameContext";
-import { useState } from "react";
+import { usePlayer } from "./usePlayer";
 
 export const Player = () => {
-  const { handleMatch } = useGameContext();
-  const [playersMove, setPlayersMove] = useState<Movement>(ROCK);
-
-  const handleRockButtonClick = () => {
-    setPlayersMove(ROCK);
-    handleMatch(ROCK);
-  };
-
-  const handlePaperButtonClick = () => {
-    setPlayersMove(PAPER);
-    handleMatch(PAPER);
-  };
-
-  const handleScissorsButtonClick = () => {
-    setPlayersMove(SCISSORS);
-    handleMatch(SCISSORS);
-  };
+  const {
+    playersMove,
+    handleRockButtonClick,
+    handlePaperButtonClick,
+    handleScissorsButtonClick,
+  } = usePlayer();
 
   return (
     <div className={styles.player}>
       <Header>Player</Header>
-      <div>{playersMove}</div>
-      <Footer>
-        <Button onClick={handleRockButtonClick}>Rock</Button>
-        <Button onClick={handlePaperButtonClick}>Paper</Button>
-        <Button onClick={handleScissorsButtonClick}>Scissors</Button>
-      </Footer>
+      <Image move={playersMove} />
+      <Actions
+        onRockButtonClick={handleRockButtonClick}
+        onPaperButtonClick={handlePaperButtonClick}
+        onScissorsButtonClick={handleScissorsButtonClick}
+      />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { GameContext } from "../../context/GameContext";
 import { Header } from "../../components/Header/Header";
+import { Image } from "../../components/Image/Image";
 import styles from "./Computer.module.scss";
 import { useContext } from "react";
 
@@ -9,7 +10,8 @@ export const Computer = () => {
   return (
     <div className={styles.computer}>
       <Header>Computer</Header>
-      <div>{computersMove}</div>
+      <Image move={computersMove} />
+      <div />
     </div>
   );
 };
