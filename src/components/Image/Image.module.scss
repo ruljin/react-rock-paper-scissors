@@ -1,0 +1,30 @@
+.image {
+  background-image: url("../../assets/images/rock-paper-scissors.png");
+  width: 310px;
+  height: 285px;
+
+  &__rock {
+    background-position: 0 0;
+
+    &--player {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__paper {
+    background-position: 0 570px;
+
+    &--player {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__scissors {
+    width: 328px;
+    background-position: 0 285px;
+
+    &--computer {
+      transform: rotateY(180deg);
+    }
+  }
+}

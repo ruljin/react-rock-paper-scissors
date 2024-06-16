@@ -15,7 +15,7 @@ export const Player = () => {
   return (
     <div className={styles.player}>
       <Header>Player</Header>
-      <Image move={playersMove} />
+      <Image move={playersMove} isPlayer />
       <Actions
         onRockButtonClick={handleRockButtonClick}
         onPaperButtonClick={handlePaperButtonClick}
